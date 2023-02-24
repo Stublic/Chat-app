@@ -27,13 +27,13 @@ function App() {
 
   
   useEffect(() => {
-    const drone = new window.Scaledrone("E0eB7uflNWyk4slg", {
+    const drone = new window.Scaledrone("eAntdYVNkdXkWT7d", {
       data: member
     });
     setDrone(drone);
   }, [])
   useEffect(() => {
-    const drone = new window.Scaledrone("E0eB7uflNWyk4slg", {
+    const drone = new window.Scaledrone("eAntdYVNkdXkWT7d", {
       data: member
     });
 
@@ -69,7 +69,7 @@ function App() {
       member: member
     };
     setMessages(prevMessages => [...prevMessages, newMessage]);
-    const drone = new window.Scaledrone("JrXoRFRFtubpZybj");
+    const drone = new window.Scaledrone("eAntdYVNkdXkWT7d");
     drone.publish({
       room: "observable-room",
       message
