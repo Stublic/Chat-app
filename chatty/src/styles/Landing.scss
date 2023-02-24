@@ -1,0 +1,77 @@
+html{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    .logo{
+        margin: 2em;
+        width: 10rem;
+    }
+    .banner{
+        width: 40rem;
+    }
+    .landing-form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        input{
+            margin: 1rem 0;
+        }
+    }
+    .avatar-box{
+        .avatar-btn{
+            border: none;
+            padding: none;
+            background-color: transparent;
+            border: 1px solid transparent;
+            cursor: pointer;
+            margin: 0 0.5rem;
+            img{
+            padding:  1rem;
+            }
+            &:hover{
+                border: 1px solid rgba(128, 128, 128, 0.331);
+                border-radius: 15px;
+                background-color: rgba(205, 205, 205, 0.331);
+            }
+            &:focus{
+                border: 1px solid rgba(128, 128, 128, 0.331);
+                border-radius: 15px;
+                background-color: rgba(205, 205, 205, 0.331);
+                
+            }
+        }
+        .avatar-chosen{
+                border: 1px solid rgba(128, 128, 128, 0.331);
+                border-radius: 15px;
+                background-color: rgba(205, 205, 205, 0.331);
+                cursor: pointer;
+                margin: 0 0.5rem;
+                img{
+                    padding:  1rem;
+                    }
+                
+
+        }
+        
+    }
+    // add bgc to button if both name and avatar are chosen
+    .continue-btn{
+        padding: 10px 30px;
+        font-size: 16px;
+        background-color: transparent;
+        color: rgba(128, 128, 128, 0.331);
+        border: 1px solid rgba(128, 128, 128, 0.331);
+        cursor: pointer;
+        border-radius: 8px;
+        transition: 0.3s all;
+        margin-top: 1rem;
+        &:hover{
+            background-color: #42098B;
+            color: white;
+        }
+        
+    }
+}

@@ -10,14 +10,14 @@ function Messages(props) {
     const className = messageFromMe ?
       "Messages-message currentMember" : "Messages-message";
     return (
-      <li key={message.id} className={className}>
+      <li key={Math.random()} className={className}>
         <span
           className="avatar"
-          style={{backgroundColor: member.color}}
+          style={{background: member.clientData.userAvatar}}
         />
         <div className="Message-content">
           <div className="username">
-            {member.username}
+            {member.clientData.username}
           </div>
           <div className="text">{text}</div>
         </div>
