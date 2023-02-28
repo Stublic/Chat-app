@@ -1,20 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import '../styles/App.scss';
+import defaultAvatar from '../img/avatar1.svg'
+
+
 
 function Messages(props) {
-  const { messages, currentMember } = props;
+  const { messages, currentMember, username, avatar, activeAvatar } = props;
 
+      
   function renderMessage(message) {
     const { member, text } = message;
     const messageFromMe = member.id === currentMember.id;
     const className = messageFromMe ?
       "Messages-message currentMember" : "Messages-message";
+
+     
+
     return (
       <li key={Math.random()} className={className}>
-        <span
-          className="avatar"
-          style={{background: member.clientData.userAvatar}}
-        />
+        
+        <img className="avatar" src={activeAvatar ? activeAvatar : defaultAvatar} alt="" />
         <div className="Message-content">
           <div className="username">
             {member.clientData.username}
@@ -26,9 +31,12 @@ function Messages(props) {
   }
 
   return (
-    <ul className="Messages-list">
-      {messages.map(m => renderMessage(m))}
-    </ul>
+    <div className="Messages-list-wrap">
+        <ul className="Messages-list">
+          {messages.map(m => renderMessage(m))}
+        </ul>
+    </div>
+    
   );
 }
 

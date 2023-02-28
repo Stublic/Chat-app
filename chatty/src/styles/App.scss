@@ -29,14 +29,38 @@
 }
 
 .App-header {
-  background-color: #262626;
+  background: rgba(255, 255, 255, 0.2);
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);
   overflow: visible;
   width: 100%;
   text-align: center;
   color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  .logo{
+    margin: 0.5rem;
+    width: 10rem;
+    padding-right: 5rem;
+  }
+  .active-users{
+    display: flex;
+    .header-avatar{
+      width: 30px;
+      border: 1px solid rgba(128, 128, 128, 0.452);
+      padding: 0.5rem;
+      border-radius: 50%;
+      background-color: #ffffff34;
+      margin-right: -10px;
+    }
+  }
 }
-
-.Messages-list {
+.Messages-list-wrap{
+display: flex;
+  flex-direction: column-reverse;
   padding: 20px 0;
   max-width: 900px;
   width: 100%;
@@ -45,7 +69,19 @@
   padding-left: 0;
   flex-grow: 1;
   overflow: auto;
+  .Messages-list {
+  padding: 20px 0;
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  list-style: none;
+  padding-left: 0;
+  flex-grow: 1;
+  overflow: visible;
+  
 }
+}
+
 
 .Messages-message {
   display: flex;
@@ -104,30 +140,29 @@ backdrop-filter: blur(5px);
 border: 1px solid rgba(9, 202, 198, 0.3);
 }
 
-form {
+
+
+
+.loader{
+  min-height: 100vh;
+  background-color: #fff;
   display: flex;
-  width: 100%;
-  justify-content: space-between;
-  max-width: 900px;
-  margin: 0 auto 40px;
+  align-items: center;
+  justify-content: center;
+  img{
+    animation: spin 0.5s infinite linear;
+
+  }
 }
 
-input {
-  padding: 5px;
-  font-size: 16px;
-  border-radius: 8px;
-  border: 1px solid rgb(51, 8, 131);
-  flex-grow: 1;
-}
-
-.send-btn{
-  padding: 5px 10px;
-  font-size: 16px;
-  background-color: orangered;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  margin-left: 10px;
+@keyframes spin { 
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+  
 }
 
 

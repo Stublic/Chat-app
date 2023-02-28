@@ -1,7 +1,7 @@
-html{
+#landing{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     height: 100vh;
     .logo{
@@ -68,6 +68,7 @@ html{
         border-radius: 8px;
         transition: 0.3s all;
         margin-top: 1rem;
+        text-decoration: none;
         &:hover{
             background-color: #42098B;
             color: white;
@@ -75,3 +76,18 @@ html{
         
     }
 }
+
+form {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    max-width: 900px;
+    margin: 0 auto 40px;
+  }
+  input{
+    padding: 5px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid rgba(198, 198, 198, 0.807);
+    flex-grow: 1;
+  }

@@ -5,37 +5,47 @@ import avatar1 from '../img/avatar1.svg'
 import avatar2 from '../img/avatar2.svg'
 import avatar3 from '../img/avatar3.svg'
 import {useState} from 'react';
+import { Link } from 'react-router-dom'
+import ChatRoom from './ChatRoom'
 
-const Landing = () => {
-    const [avatar, setAvatar] = useState(true)
-    const chooseAvatar = (e) =>{
-        e.preventDefault()
-
-    }
+const Landing = ({avatar, username, changeRoomKey, addRoomKey}) => {
+    
     return ( 
-        <>
-            {/* <img className='logo' src={logo} alt="chatty logo" /> */}
+        <div id='landing'>
+            <img className='logo' src={logo} alt="chatty logo" />
+             {/* <img className='banner' src={banner} alt="" /> */}
             <form className='landing-form'>
-                <input type="text" placeholder='Choose your Chat name' />
+                <input type="text" onChange={username} placeholder='Choose your Chat name' />
+
+
                 <div className='avatar-box'>
-                    <button 
-                    className={avatar ? 'avatar-chosen' : 'avatar-btn'}
-                    onClick={chooseAvatar}
-                    
+
+               
+
+                    <button
+                    className={avatar ? 'avatar-btn':'avatar-chosen'}
+                    onClick={avatar}
                     >
-                        <img src={avatar1} alt="" />
+                        <img id='1' src={avatar1} alt="" />
                     </button>
-                    <button className='avatar-btn' onClick={(e) => chooseAvatar(e)}>
-                        <img src={avatar2} alt="" />
+                    <button className='avatar-btn' onClick={avatar}>
+                        <img id='2' src={avatar2} alt="" />
                     </button>
-                    <button className='avatar-btn' onClick={chooseAvatar}>
-                        <img src={avatar3} alt="" />
+                    <button className='avatar-btn' onClick={avatar}>
+                        <img id='3' src={avatar3} alt="" />
                     </button>
                 </div>
-                <button className='continue-btn'>Continue</button>
+
+
+                <Link className='continue-btn' to={'/ChatRoom'}>Continue</Link>
+
+
+                <label htmlFor="room-key">To start private chatting enter your room key.</label>
+                <input id='room-key' placeholder="Enter private room key" onChange={changeRoomKey} />
+                {/* <button onClick={(e) => e.preventDefault()} >Continue</button> */}
             </form>
-            <img className='banner' src={banner} alt="" />
-        </>
+           
+        </div>
      );
 }
  
