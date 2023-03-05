@@ -1,34 +1,44 @@
-
 import React, { useState } from "react";
-import send from '../img/send.svg';
-import emoji from '../img/emoji.svg';
-import '../styles/Input.scss'
+import send from "../img/send.svg";
+import emoji from "../img/emoji.svg";
+import "../styles/input.scss";
 
-
-const emojis = ["😀", "😂", "😍", "👍", "👎", "👋", "👌", "🙌", "🤔", "💩", "❤️", "🎉"];
+const emojis = [
+  "😀",
+  "😂",
+  "😍",
+  "👍",
+  "👎",
+  "👋",
+  "👌",
+  "🙌",
+  "🤔",
+  "💩",
+  "❤️",
+  "🎉",
+];
 
 const Input = ({ onSendMessage }) => {
   const [text, setText] = useState("");
   const [showEmojis, setShowEmojis] = useState(false);
 
-  const onChange = e => {
+  const onChange = (e) => {
     setText(e.target.value);
   };
 
-  const onSubmit = e => {
+  const onSubmit = (e) => {
     e.preventDefault();
     setText("");
     onSendMessage(text);
   };
 
-  const onEmojiClick = emoji => {
+  const onEmojiClick = (emoji) => {
     setText(text + emoji);
   };
 
   const toggleEmojis = () => {
     setShowEmojis(!showEmojis);
   };
-  
 
   return (
     <div className="Input">
@@ -42,19 +52,19 @@ const Input = ({ onSendMessage }) => {
           autoFocus={true}
         />
         <button className="emoji-btn" type="button" onClick={toggleEmojis}>
-        <img className="emoji-svg" src={emoji} alt="send" />
+          <img className="emoji-svg" src={emoji} alt="send" />
         </button>
-        <button className="send-btn"  type="submit">
+        <button className="send-btn" type="submit">
           <img src={send} alt="send" />
         </button>
-        
+
         {showEmojis && (
           <div className="emoji-picker">
-            {emojis.map(emoji => (
+            {emojis.map((emoji) => (
               <button
                 key={emoji}
                 className="emoji-picker-btn"
-                onClick={() => (toggleEmojis(),onEmojiClick(emoji))}
+                onClick={() => (toggleEmojis(), onEmojiClick(emoji))}
               >
                 {emoji}
               </button>
