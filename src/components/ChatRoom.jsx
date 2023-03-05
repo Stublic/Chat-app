@@ -46,7 +46,6 @@ function ChatRoom({ avatar, username, roomKey }) {
     id: "",
   });
 
-  useEffect(() => {}, [messages]);
   useEffect(() => {
     const drone = new window.Scaledrone(roomKey, {
       data: member,

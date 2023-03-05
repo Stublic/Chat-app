@@ -5,7 +5,7 @@ import avatar2 from "../img/avatar2.svg";
 import avatar3 from "../img/avatar3.svg";
 import { Link } from "react-router-dom";
 
-const Landing = ({ avatar, username, changeRoomKey, addRoomKey }) => {
+const Landing = ({ avatar, username, changeRoomKey }) => {
   return (
     <div id="landing">
       <img className="logo" src={logo} alt="chatty logo" />
@@ -43,7 +43,6 @@ const Landing = ({ avatar, username, changeRoomKey, addRoomKey }) => {
           placeholder="Enter private room key"
           onChange={changeRoomKey}
         />
-        {/* <button onClick={(e) => e.preventDefault()} >Continue</button> */}
       </form>
     </div>
   );
