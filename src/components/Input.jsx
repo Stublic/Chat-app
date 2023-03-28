@@ -21,9 +21,15 @@ const emojis = [
 const Input = ({ onSendMessage }) => {
   const [text, setText] = useState("");
   const [showEmojis, setShowEmojis] = useState(false);
+  const [counter, setCounter] = useState(0)
 
   const onChange = (e) => {
     setText(e.target.value);
+    setCounter(text.length)
+    if (text.length >= 120) {
+      // alert('Previše tipkaš')
+      setText(text)
+    }
   };
 
   const onSubmit = (e) => {
@@ -39,9 +45,15 @@ const Input = ({ onSendMessage }) => {
   const toggleEmojis = () => {
     setShowEmojis(!showEmojis);
   };
-
+const textLenghtChecker = text.length <= 0
   return (
     <div className="Input">
+      <div className="text-counter">
+        {
+          textLenghtChecker ? ''  : `${counter}/120 words`
+        }
+        
+        </div>
       <form onSubmit={onSubmit}>
         <input
           className="send-input"
@@ -50,6 +62,7 @@ const Input = ({ onSendMessage }) => {
           type="text"
           placeholder="Enter your message and press ENTER"
           autoFocus={true}
+          disabled={text.length > 120}
         />
         <button className="emoji-btn" type="button" onClick={toggleEmojis}>
           <img className="emoji-svg" src={emoji} alt="send" />

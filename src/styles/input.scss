@@ -1,5 +1,6 @@
 .send-input {
   padding: 5px;
+  padding-right: 5%;
   font-size: 16px;
   border-radius: 8px;
   border: 1px solid rgba(9, 202, 198, 0.3);
@@ -11,6 +12,11 @@
     outline: none;
     background: rgba(255, 255, 255, 0.2);
   }
+}
+.text-counter{
+  color: rgba(255, 255, 255, 0.475);
+  margin-left: 18rem;
+  padding: 0.5rem;
 }
 
 .send-btn {

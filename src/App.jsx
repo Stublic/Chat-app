@@ -3,11 +3,13 @@ import Landing from "./components/Landing";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { useState} from "react";
 
+
 const App = () => {
   const [avatar, setAvatar] = useState(null);
   const chooseAvatar = (e) => {
     e.preventDefault();
     setAvatar(e.target.id);
+    
   };
 
   const [username, setUsername] = useState('');
